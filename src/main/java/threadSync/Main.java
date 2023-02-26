@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         MovieTicketServer movieTicketServer = new MovieTicketServer(
                 "Interstellar",
-                20
+                10
         );
 
         // Creating 4 threads

@@ -11,11 +11,12 @@ public class MovieTicketServer {
         this.availableSeats = availableSeats;
     }
 
-    synchronized void bookTicket(String customerName, int numberOfSeats) {
+    synchronized void bookTicket(String customerName, int numberOfSeats) throws InterruptedException {
+        Thread.sleep(500);
         System.out.println("Hi," + customerName + " : " + this.availableSeats + " : Seats available for " + this.movieName);
 
         if ((this.availableSeats - numberOfSeats) < 0) {
-            System.out.println("Hi," + customerName + " : Seats not available for " + this.movieName);
+            System.out.println("Hi,git" + customerName + " : Seats not available for " + this.movieName);
         } else {
             this.availableSeats = this.availableSeats - numberOfSeats;
             System.out.println("Hi," + customerName + " : " + numberOfSeats + " Seats booked successfully for" + this.movieName);

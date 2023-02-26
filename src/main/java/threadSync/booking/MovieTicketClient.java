@@ -16,6 +16,11 @@ public class MovieTicketClient extends Thread{
     }
 
     public void run() {
-        movieTicketServer.bookTicket(customerName, numberOfTickets);
+        try {
+            movieTicketServer.bookTicket(customerName, numberOfTickets);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
     }
 }
